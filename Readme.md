@@ -6,6 +6,8 @@
 - Likes and follows
 - Topic wise Tags
 
+# DESIGN DOC
+
 # API Endpoints
 
 ## User Actions
