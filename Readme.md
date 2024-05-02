@@ -6,9 +6,9 @@
 - Likes and follows
 - Topic wise Tags
 
-# DESIGN DOC
+## DESIGN DOC
 
-# API Endpoints
+## API Endpoints
 
 ## User Actions
 
@@ -140,14 +140,14 @@
 
 ## DATA MODELS
 
-## User
+### User
 
 - id: ID
 - username: string
 - email: string
 - bio: string(opt)
 
-## Question
+### Question
 
 - id: ID
 - title: string

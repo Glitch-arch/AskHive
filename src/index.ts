@@ -1,9 +1,15 @@
 import Express from "express";
-import serverConfig from "./config/server.config"
-const app = Express()
+import serverConfig from "./config/server.config";
+import apiRouter from "./routes";
+import connectToDB from "./config/db.config";
 
-const PORT = serverConfig.PORT
+const app = Express();
+const PORT = serverConfig.PORT;
+
+connectToDB();
 
 app.listen(PORT, () => {
-    console.log("Server started on Port:", PORT)
-})
+    console.log("Server started on Port:", PORT);
+});
+
+app.use("api", apiRouter);
