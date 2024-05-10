@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 import serverConfig from "./server.config";
 
 export default async function connectToDB() {

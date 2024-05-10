@@ -1,4 +1,4 @@
-import mongoose, { Types, mongo } from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 interface Ianswer {
     question_id: Types.ObjectId, 

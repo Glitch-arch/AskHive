@@ -5,7 +5,7 @@
   "author": "khushSuthar",
   "license": "MIT",
   "scripts": {
-    "prebuild": "yarn eslint . --fix",
+    
     "build": "yarn tsc",
     "watch": "yarn tsc -w ",
     "prestart": "yarn run build",
