@@ -3,10 +3,16 @@ import { User } from "../models/user.models";
 interface IuserData{
     username: string,
     email: string,
-    bio: string
+    bio?: string | null | undefined
 }
 
-export class userRespository{
+interface Irepo{
+    registerUser: (userData:object) => object,
+    getUser: (userId: string) => object,
+    updateUser: (userId: string, userData: IuserData) => object
+}
+
+export default class userRespository implements Irepo{
 
     async registerUser(userData : object) {
       try {

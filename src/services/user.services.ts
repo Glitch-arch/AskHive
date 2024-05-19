@@ -1,10 +1,15 @@
 interface Irepo{
     registerUser: (userData:object) => object,
     getUser: (userId: string) => object,
-    updateUser: (userId: string, userData: object) => object
+    updateUser: (userId: string, userData: IuserData) => object
+}
+interface IuserData{
+    username: string,
+    email: string,
+    bio?: string | null | undefined
 }
 
-export class userServices {
+export default class userServices {
     userRepository: Irepo;
     constructor(userRepository : Irepo) {
         this.userRepository = userRepository;
@@ -30,7 +35,7 @@ export class userServices {
         }
     }
 
-    async updateUser(userId: string, userData: object) {
+    async updateUser(userId: string, userData: IuserData) {
         try {
             const response = await this.userRepository.updateUser(userId, userData);
             return response;

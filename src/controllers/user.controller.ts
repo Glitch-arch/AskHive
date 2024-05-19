@@ -1,7 +1,7 @@
 import { Request,Response } from "express";
 
-import { userRespository } from "../repository/user.repository";
-import { userServices } from "../services/user.services";
+import  userRespository  from "../repository/user.repository";
+import  userServices  from "../services/user.services";
 
 const userClass = new userServices(new userRespository);
 
@@ -32,13 +32,13 @@ export const getUser = async (req: Request, res: Response) => {
 export const updateUser = async (req: Request, res: Response) => {
     
     try { 
-        const { userid, userData } = req.body;
-        const updatedUserData = await userClass.updateUser(userid, userData);
-        res.status(200).json({
-            success: true,
-            message: "User updated successfully",
-            payload: updatedUserData
-        });        
+    const { userid, userData }  = req.body;
+    const updatedUserData = await userClass.updateUser(userid, userData);
+    res.status(200).json({
+        success: true,
+        message: "User updated successfully",
+        payload: updatedUserData
+    });        
     } catch (error) {
         console.log(error);
     }
