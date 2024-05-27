@@ -12,7 +12,7 @@
 
 #### *User Actions*
 
-#### POST/users
+##### POST/users
 
 - Des: Registers a new user
 - Body :
@@ -21,13 +21,13 @@
 - Res : 201 - created
 - Returns: User object with user details
 
-#### GET/users/[userId]
+##### GET/users/[userId]
 
 - Des: Retrives user profile info
 - Res: 200 -OK
 - Returns: User profile data
 
-#### PUT/users/[userId]
+##### PUT/users/[userId]
 
 - Des: Updates user profile.
 - Body:
@@ -39,7 +39,7 @@
 
 #### *Question Management*
 
-#### POST/ques
+##### POST/ques
 
 - Des: Allows user to post ques
 - Body:
@@ -50,7 +50,7 @@
 - Res: 201 -Created
 - Returns: Question object
 
-#### GET/ques/search
+##### GET/ques/search
 
 - Des: Search questions based on text and tags
 - Query Params
@@ -61,7 +61,7 @@
 
 #### *Answer Management*
 
-#### POST/que/{questionId}/ans
+##### POST/que/{questionId}/ans
 
 - Des: Post an answer to a question
 - Body:
@@ -70,7 +70,7 @@
 - Res: 201 - Created
 - Returns: Answer object
 
-#### PUT/answers/{answerId}
+##### PUT/answers/{answerId}
 
 - Des: Edit an existing answer
 - Body:
@@ -80,7 +80,7 @@
 
 #### *Comment Management*
 
-#### POST/answers/{answerId}/comments
+##### POST/answers/{answerId}/comments
 
 - Des: Comment on an answer
 - Body:
@@ -89,7 +89,7 @@
 - Res: 201 - Created
 - Returns: Comment object
 
-#### POST/comments/{commentId}/comments
+##### POST/comments/{commentId}/comments
 
 - Description: Comment an another comment
 - Body:
@@ -100,7 +100,7 @@
 
 #### *Like Management*
 
-#### POST/{type}/{id}/like
+##### POST/{type}/{id}/like
 
 - Des: Like a ques, answer, or comment
 - Path Params:
@@ -113,7 +113,7 @@
 
 #### *Follow Management*
 
-#### POST/users/{userId}/follow/{targetUserId}
+##### POST/users/{userId}/follow/{targetUserId}
 
 - Des: Follow another user.
 - Path Params:
@@ -124,7 +124,7 @@
 
 #### *Topic Management*
 
-#### POST/topics
+##### POST/topics
 
 - Des: Create a new topic
 - Body:
@@ -132,7 +132,7 @@
 - Response: 201 -Created
 - Returns: Topic object
 
-#### GET/topics
+##### GET/topics
 
 - Des: Retrieve all topics
 - Res: 200 -OK
@@ -140,14 +140,14 @@
 
 #### *DATA MODELS*
 
-#### User
+##### User
 
 - id: ID
 - username: string
 - email: string
 - bio: string(opt)
 
-#### Question
+##### Question
 
 - id: ID
 - title: string
@@ -156,7 +156,7 @@
 - created_at: timestamp
 - user_id: ID
 
-#### Answer
+##### Answer
 
 - id: ID
 - question_id: ID
@@ -164,7 +164,7 @@
 - created_at: timestamp
 - user_id: ID
 
-#### Comment
+##### Comment
 
 - id: ID
 - parent_id: ID (ID of ans or another comment)
@@ -172,7 +172,7 @@
 - created_at: timestamp
 - user_id: ID
 
-#### Topic
+##### Topic
 
 - id: ID
 - name: string
