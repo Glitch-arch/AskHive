@@ -8,11 +8,11 @@
 
 ## DESIGN DOC
 
-## API Endpoints
+### API Endpoints
 
-## User Actions
+#### *User Actions*
 
-### POST/users
+#### POST/users
 
 - Des: Registers a new user
 - Body :
@@ -21,13 +21,13 @@
 - Res : 201 - created
 - Returns: User object with user details
 
-### GET/users/[userId]
+#### GET/users/[userId]
 
 - Des: Retrives user profile info
 - Res: 200 -OK
 - Returns: User profile data
 
-### PUT/users/[userId]
+#### PUT/users/[userId]
 
 - Des: Updates user profile.
 - Body:
@@ -37,9 +37,9 @@
 - Res: 200 -OK
 - Returns: Updated user object
 
-## Question Management
+#### *Question Management*
 
-### POST/ques
+#### POST/ques
 
 - Des: Allows user to post ques
 - Body:
@@ -50,7 +50,7 @@
 - Res: 201 -Created
 - Returns: Question object
 
-### GET/ques/search
+#### GET/ques/search
 
 - Des: Search questions based on text and tags
 - Query Params
@@ -59,9 +59,9 @@
 - Res: 200 -OK
 - Return: Array of matched question objects
 
-## Answer Management
+#### *Answer Management*
 
-### POST/que/{questionId}/ans
+#### POST/que/{questionId}/ans
 
 - Des: Post an answer to a question
 - Body:
@@ -70,7 +70,7 @@
 - Res: 201 - Created
 - Returns: Answer object
 
-### PUT/answers/{answerId}
+#### PUT/answers/{answerId}
 
 - Des: Edit an existing answer
 - Body:
@@ -78,9 +78,9 @@
 - Res: 200 - OK
 - Returns: Updated answer object
 
-## Comment Management
+#### *Comment Management*
 
-### POST/answers/{answerId}/comments
+#### POST/answers/{answerId}/comments
 
 - Des: Comment on an answer
 - Body:
@@ -89,7 +89,7 @@
 - Res: 201 - Created
 - Returns: Comment object
 
-### POST/comments/{commentId}/comments
+#### POST/comments/{commentId}/comments
 
 - Description: Comment an another comment
 - Body:
@@ -98,9 +98,9 @@
 - Res: 201 - Created
 - Returns: Comment object
 
-## Like Management
+#### *Like Management*
 
-### POST/{type}/{id}/like
+#### POST/{type}/{id}/like
 
 - Des: Like a ques, answer, or comment
 - Path Params:
@@ -111,9 +111,9 @@
 - Res: 201 - Created
 - Returns: Success Message
 
-## Follow Management
+#### *Follow Management*
 
-### POST/users/{userId}/follow/{targetUserId}
+#### POST/users/{userId}/follow/{targetUserId}
 
 - Des: Follow another user.
 - Path Params:
@@ -122,9 +122,9 @@
 - Res: 201 -Created
 - Returns: Success message
 
-## Topic Management
+#### *Topic Management*
 
-### POST/topics
+#### POST/topics
 
 - Des: Create a new topic
 - Body:
@@ -132,22 +132,22 @@
 - Response: 201 -Created
 - Returns: Topic object
 
-### GET/topics
+#### GET/topics
 
 - Des: Retrieve all topics
 - Res: 200 -OK
 - Returns: Array of topic objects
 
-## DATA MODELS
+#### *DATA MODELS*
 
-### User
+#### User
 
 - id: ID
 - username: string
 - email: string
 - bio: string(opt)
 
-### Question
+#### Question
 
 - id: ID
 - title: string
@@ -156,7 +156,7 @@
 - created_at: timestamp
 - user_id: ID
 
-### Answer
+#### Answer
 
 - id: ID
 - question_id: ID
@@ -164,7 +164,7 @@
 - created_at: timestamp
 - user_id: ID
 
-### Comment
+#### Comment
 
 - id: ID
 - parent_id: ID (ID of ans or another comment)
@@ -172,7 +172,7 @@
 - created_at: timestamp
 - user_id: ID
 
-### Topic
+#### Topic
 
 - id: ID
 - name: string
