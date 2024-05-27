@@ -1,5 +1,5 @@
 interface IquestionRepo{
-    createQuestion: (questionData: object) => object; 
+    createQuestion: (questionData:  { title: string, body: string, user_id: string, topic: string,}) => object; 
     getQuestion: (params: {text: string, tag: string}) => object;
 }
 
@@ -10,7 +10,7 @@ export class questionServices{
         this.questionRepository = questionRepository;
     }
 
-    async createQuestion(questionData: object) {
+    async createQuestion(questionData:  { title: string, body: string, user_id: string, topic: string,}) {
         try {
             const res = await this.questionRepository.createQuestion(questionData);
             return res;   

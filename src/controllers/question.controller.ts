@@ -23,6 +23,8 @@ export const getQuestion = async (req: Request, res: Response) => {
     const text : string = req.query.text?.toString() ?? "";
     const tag : string = req.query.tag?.toString() ?? "" ;
 
+    console.log("text and tag: ", text, tag, typeof text, typeof tag);
+
     const questionArray = await questionClass.getQuestion({ text, tag });
     res.status(200).json({
         success: true,

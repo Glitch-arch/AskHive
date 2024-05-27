@@ -4,7 +4,7 @@ interface Itopic {
     name: string
 }
 
-const topicSchema = new mongoose.Schema<Itopic>({
+const topicSchema = new mongoose.Schema <Itopic>({
     name: {
         type: String,
         required: [true, "name cannot be empty"]

@@ -1,4 +1,5 @@
 import mongoose, { Types } from "mongoose";
+import { Topic } from "./topic.models";
 
 interface Iquestion {
     title: string, 
@@ -19,7 +20,7 @@ const questionSchema = new mongoose.Schema <Iquestion>({
     },
     topic: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Topic"
+        ref: Topic
     }],
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
